@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Voiture</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Montserrat, sans-serif;
+background:#0b0b0b;
+color:white;
+}
+
+header{
+padding:30px;
+text-align:center;
+background:black;
+border-bottom:1px solid gold;
+}
+
+.logo{
+font-family:"Playfair Display", serif;
+font-size:40px;
+color:gold;
+letter-spacing:2px;
+}
+
+nav{
+text-align:center;
+padding:15px;
+background:#111;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 20px;
+font-weight:600;
+}
+
+.hero{
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:url("https://images.unsplash.com/photo-1549921296-3a6b7a5c1a1d") center/cover;
+}
+
+.hero h1{
+background:rgba(0,0,0,0.6);
+padding:20px 40px;
+border-radius:10px;
+font-size:42px;
+}
+
+.section{
+padding:60px 20px;
+text-align:center;
+}
+
+.section h2{
+color:gold;
+margin-bottom:40px;
+}
+
+.cars{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.car{
+background:#111;
+border-radius:12px;
+width:300px;
+overflow:hidden;
+transition:0.3s;
+border:1px solid #222;
+}
+
+.car:hover{
+transform:translateY(-10px);
+border:1px solid gold;
+}
+
+.car img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.car-content{
+padding:20px;
+}
+
+.price{
+color:gold;
+font-size:22px;
+font-weight:600;
+margin:10px 0;
+}
+
+button{
+background:gold;
+border:none;
+padding:12px 18px;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input{
+padding:12px;
+border-radius:6px;
+border:none;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:30px;
+margin-top:60px;
+border-top:1px solid gold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Luxury Voiture</div>
+<p>Location de voitures de prestige</p>
+<p>PDG : Thomas Aune</p>
+</header>
+
+<nav>
+<a href="#voitures">Véhicules</a>
+<a href="#reservation">Réserver</a>
+</nav>
+
+<section class="hero">
+<h1>Le luxe. La puissance. L’élégance.</h1>
+</section>
+
+<section id="voitures" class="section">
+<h2>Nos Véhicules</h2>
+
+<div class="cars">
+
+<div class="car">
+<img src="https://images.unsplash.com/photo-1617654112328-3f2e9b8c6b6c">
+<div class="car-content">
+<h3>Audi RS3</h3>
+<p>Sport compacte haute performance</p>
+<div class="price">250€ / jour</div>
+<button onclick="chooseCar('Audi RS3')">Réserver</button>
+</div>
+</div>
+
+<div class="car">
+<img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6e4">
+<div class="car-content">
+<h3>Audi RS6</h3>
+<p>Puissance et confort premium</p>
+<div class="price">450€ / jour</div>
+<button onclick="chooseCar('Audi RS6')">Réserver</button>
+</div>
+</div>
+
+<div class="car">
+<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
+<div class="car-content">
+<h3>Mercedes Brabus</h3>
+<p>Luxe extrême allemand</p>
+<div class="price">650€ / jour</div>
+<button onclick="chooseCar('Brabus')">Réserver</button>
+</div>
+</div>
+
+<div class="car">
+<img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6">
+<div class="car-content">
+<h3>Ferrari</h3>
+<p>Supercar italienne iconique</p>
+<div class="price">1200€ / jour</div>
+<button onclick="chooseCar('Ferrari')">Réserver</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="reservation" class="section">
+<h2>Réservation</h2>
+
+<form onsubmit="return sendReservation()">
+<input type="text" id="car" placeholder="Voiture choisie" required>
+<input type="text" placeholder="Votre nom" required>
+<input type="date" required>
+<button type="submit">Confirmer</button>
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 Luxury Voiture</p>
+</footer>
+
+<script>
+function chooseCar(name){
+document.getElementById("car").value = name;
+window.location.href="#reservation";
+}
+
+function sendReservation(){
+alert("Demande envoyée. Luxury Voiture vous contactera.");
+return false;
+}
+</script>
+
+</body>
+</html>
